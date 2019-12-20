@@ -37,7 +37,8 @@ def getword(year,month,day):
 	maindef = l[1]
 
 
+
 	return string.capwords(n) + "-"+ "[" +h[0]+ "]"+maindef
 
 
-#print(getword(2018,11,5))
+# print(getword(2018,3,2))

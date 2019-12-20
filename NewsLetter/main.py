@@ -16,8 +16,8 @@ month = ""
 str(month)
 day = ""
 str(day)
-month = "june" #Wrap GUI Control
-day = "3"
+month = "may" #Wrap GUI Control
+day = "20"
 
 
 url = "https://www.timeanddate.com/on-this-day" + "/" + month + "/" + day
@@ -33,7 +33,7 @@ y = x.find_next("h3", class_ ='otd-ttl')
 g = y.find_next("h3", class_='otd-ttl')
 h = g.find_next("h3", class_ = 'otd-ttl')
 e = h.find_next("h3", class_ = 'otd-ttl')
-
+# print(type(x))
 
 def parsetotext(foundsoup):
 	k = []
@@ -121,9 +121,9 @@ WordDescription = table.cell(2,0)
 Mondayevent = table.cell(1,0)
 # Bolding
 Monday.paragraphs[0].add_run("Monday"+str(Mdate), style = 'Contentstyle').bold = True
-Mondayword.paragraphs[0].add_run('Verminllion(n) - A vivid red to reddish orange color', style = 'CommentsStyle')
-WordDescription.paragraphs[0].add_run("Word of the Day: " + getword(2019,5,6), style = 'CommentsStyle')
-Mondayevent.paragraphs[0].add_run(Mevent, style = 'CommentsStyle')
+Mondayword.paragraphs[0].add_run( getword(2018, 12, 1), style = 'CommentsStyle') #Add getword here
+WordDescription.paragraphs[0].add_run("Word of the Day: ", style = 'CommentsStyle').bold = True
+Mondayevent.paragraphs[0].add_run( "On this day: " + Mevent, style = 'CommentsStyle')
 
 
 
@@ -133,9 +133,9 @@ Tuesdayword = table.cell(3, 1)
 WordDescription2 = table.cell(2,1)
 Tuesdayevent = table.cell(1,1)
 Tuesday.paragraphs[0].add_run("Tuesday"+str(Tdate), style = 'Contentstyle').bold = True
-WordDescription2.paragraphs[0].add_run("Word of the Day: "+ getword(2019,5,7), style = 'CommentsStyle')
-Tuesdayword.paragraphs[0].add_run('Verminllion(n) - A vivid red to reddish orange color', style = 'CommentsStyle')
-Tuesdayevent.paragraphs[0].add_run(Tevent, style = 'CommentsStyle')
+WordDescription2.paragraphs[0].add_run("Word of the Day: ", style = 'CommentsStyle').bold = True
+Tuesdayword.paragraphs[0].add_run(getword(2018, 12, 2), style = 'CommentsStyle') #Add getword here
+Tuesdayevent.paragraphs[0].add_run( "On this day: " + Tevent, style = 'CommentsStyle')
 
 
  #---------------------------------------------------------------------------------------#
@@ -144,9 +144,9 @@ Wednesdayword = table.cell(3, 2)
 WordDescription3 = table.cell(2,2)
 Wednesdayevent = table.cell(1,2)
 Wednesday.paragraphs[0].add_run("Wednesday"+str(WDate), style = 'Contentstyle').bold = True
-WordDescription3.paragraphs[0].add_run("Word of the Day: " + getword(2019,5,8), style = 'CommentsStyle')
-Wednesdayword.paragraphs[0].add_run('Verminllion(n) - A vivid red to reddish orange color', style = 'CommentsStyle')
-Wednesdayevent.paragraphs[0].add_run(Wevent, style = 'CommentsStyle')
+WordDescription3.paragraphs[0].add_run("Word of the Day: ", style = 'CommentsStyle').bold = True
+Wednesdayword.paragraphs[0].add_run(getword(2018, 12, 3), style = 'CommentsStyle') #Add getword here
+Wednesdayevent.paragraphs[0].add_run("On this day: " +Wevent, style = 'CommentsStyle')
 
  
  #---------------------------------------------------------------------------------------#
@@ -155,9 +155,9 @@ Thursdayword = table.cell(3, 3)
 WordDescription4 = table.cell(2,3)
 Thursdayevent = table.cell(1,3)
 Thursday.paragraphs[0].add_run("Thursday"+str(ThDate), style = 'Contentstyle').bold = True
-WordDescription4.paragraphs[0].add_run("Word of the Day: " + getword(2019,5,9), style = 'CommentsStyle')
-Thursdayword.paragraphs[0].add_run('Verminllion(n) - A vivid red to reddish orange color', style = 'CommentsStyle')
-Thursdayevent.paragraphs[0].add_run(Thevent, style = 'CommentsStyle')
+WordDescription4.paragraphs[0].add_run("Word of the Day: ", style = 'CommentsStyle').bold = True
+Thursdayword.paragraphs[0].add_run(getword(2018, 12, 4), style = 'CommentsStyle') #Add getword here
+Thursdayevent.paragraphs[0].add_run("On this day: " +Thevent, style = 'CommentsStyle')
 
 
 #-----------------------------------CHANGE VARIABLE NAMES QUICKLY---------------------------------#
@@ -166,9 +166,9 @@ Fridayword = table.cell(3, 4)
 WordDescription5 = table.cell(2,4)
 Fridayevent = table.cell(1,4)
 Friday.paragraphs[0].add_run("Friday"+str(FDate), style = 'Contentstyle').bold = True
-WordDescription5.paragraphs[0].add_run("Word of the Day: "+ getword(2019,5,10), style = 'CommentsStyle')
-Fridayword.paragraphs[0].add_run('Verminllion(n) - A vivid red to reddish orange color', style = 'CommentsStyle')
-Fridayevent.paragraphs[0].add_run(Fevent, style = 'CommentsStyle')
+WordDescription5.paragraphs[0].add_run("Word of the Day: ", style = 'CommentsStyle').bold = True
+Fridayword.paragraphs[0].add_run(getword(2018, 12, 5), style = 'CommentsStyle') #Add getword here
+Fridayevent.paragraphs[0].add_run("On this day: " +Fevent, style = 'CommentsStyle')
 
 
 document.save('testfile.docx')
