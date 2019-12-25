@@ -3,18 +3,20 @@ import numpy as np
 import string
 import WordScrape
 # Fixing random state for reproducibility
-np.random.seed(50)
-
-x = np.random.uniform(1, 10, size=26)
-y = np.random.uniform(1, 10, size=26)# Array of random numbers
 
 
+test = string.ascii_letters
+test2 = test[0:9]
+x = [1,2,3,4,5,6,7,8,10]
+y = [3,4,5,6,8,10,11,10,11]
 
-print(x)
-print(y)
 
-fig, ax = plt.subplots()
-# ax.scatter(x, y)
+xy = (1,3)
 
-# plt.show()
+plt.scatter(x,y)
 
+for k,i,e in zip(test2,x,y):
+	xy = (i,e)
+	plt.annotate(k,xy)
+
+plt.show()
