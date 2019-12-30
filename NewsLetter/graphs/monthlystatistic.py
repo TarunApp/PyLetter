@@ -6,7 +6,7 @@ from FactScrape import scrapelen,numfacts
 # Fixing random state for reproducibility
 
 
-days = list(range(1,10))
+days = list(range(1,3))
 
 
 def gevents(month, maindays):
@@ -51,5 +51,9 @@ graphevents(ax2, "March", days, "blue")
 
 # plt.title('Days')
 # plt.legend()
+# ax.set_title('testero')
+# ax2.set_title('testero - 2')
 
+
+plt.tight_layout()
 plt.show()

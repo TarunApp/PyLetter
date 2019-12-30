@@ -60,17 +60,38 @@ def scrapelen(month,day):
 
 	return len(y)
 
-def numfacts(month, day):
+def numfacts(month, day, text="fact"):
+
+	if text == "fact":
+		url = "https://en.wikipedia.org/wiki/"+ month + "_" + day
+
+		request = requests.get(url)		#<---------- Move this into a seperate function
+		html_content = request.text
+
+		soup = BeautifulSoup(html_content, "html.parser")
+		soupul = soup.find("ul")
+		n = soupul.find_next("ul")
+
+		x = n.find_all('li')
+		return len(x)
+	elif text == "date":
+		url = "https://en.wikipedia.org/wiki/"+ month + "_" + day
+
+		request = requests.get(url)		#<---------- Move this into a seperate function
+		html_content = request.text
+
+		soup = BeautifulSoup(html_content, "html.parser")
+		soupul = soup.find("ul")
+		n = soupul.find_next("ul")
+		k = n.find_next("ul")
+
+		# x = n.find_all('li')
+		return len(k)
+
+	#Add events
 
 
-	url = "https://en.wikipedia.org/wiki/"+ month + "_" + day
+print(numfacts("December", "29", text="fact"))
 
-	request = requests.get(url)		#<---------- Move this into a seperate function
-	html_content = request.text
 
-	soup = BeautifulSoup(html_content, "html.parser")
-	soupul = soup.find("ul")
-	n = soupul.find_next("ul")
 
-	x = n.find_all('li')
-	return len(x)
