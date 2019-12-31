@@ -84,14 +84,11 @@ def numfacts(month, day, text="fact"):
 		soupul = soup.find("ul")
 		n = soupul.find_next("ul")
 		k = n.find_next("ul")
-
+		
 		# x = n.find_all('li')
 		return len(k)
 
 	#Add events
 
 
-print(numfacts("December", "29", text="fact"))
-
-
-
+# print(numfacts("December", "29", text="fact"))

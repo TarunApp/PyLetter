@@ -14,18 +14,19 @@ def gevents(month, maindays):
 	numevents = []
 
 	for i in maindays:
+
 		daysx.append(i)
 		numevents.append(numfacts(month,str(i)))
 
-	return list(zip(daysx,numevents))
+	return zip(daysx,numevents)
 # print(gevents("December", days))
 # print(gevents("March", days))
 
-def graphevents(graph, month, maindays, plotcolor):
+def graphevents(graph, month, maindays, plotcolor="red"):
 	for i,e in gevents(month, maindays):
-		graph.scatter(i, e, color=plotcolor)
+		graph.scatter(i, e, color=plotcolor, label=month)
 		xy = (i,e)
-		graph.annotate("Dec. " + str(i), xy, wrap=True)
+		# graph.annotate("Dec. " + str(i), xy, wrap=True)
 
 
 # x = [1,2,3,4,5,6]
@@ -36,24 +37,31 @@ def graphevents(graph, month, maindays, plotcolor):
 
 
 # for i,e in gevents("December", days):
-# 	plt.scatter(i, e, color="red", lable="December")
+# 	plt.scatter(i, e, color="red")
 # 	xy = (i,e)
 # 	plt.annotate("Dec. " + str(i), xy, wrap=True)
 
 # for i,e in gevents("March", days):
-# 	plt.scatter(i, e, color="blue", lable="March")
+# 	plt.scatter(i, e, color="blue")
 # 	xy = (i,e)
 # 	plt.annotate("Mar. " + str(i), xy, wrap=True)
 
-fig, (ax, ax2) = plt.subplots(2,1)
-graphevents(ax, "December", days, "red")
-graphevents(ax2, "March", days, "blue")
+k = gevents("December", days)
+x, y = zip(*k)
+print(y)
+#faster compile time
+fig, (ax) = plt.subplots(1,1)
+ax.scatter(x,y)
+
+
+# graphevents(ax2, "March", days, "blue")
+
+# ax.plot()
 
 # plt.title('Days')
-# plt.legend()
 # ax.set_title('testero')
 # ax2.set_title('testero - 2')
 
 
-plt.tight_layout()
+# plt.tight_layout()
 plt.show()
