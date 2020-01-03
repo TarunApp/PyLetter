@@ -10,6 +10,9 @@ days = list(range(1,3))
 
 
 def gevents(month, maindays):
+	"""Return a list of events for given month and list of days"""
+
+
 	daysx = []
 	numevents = []
 
@@ -49,10 +52,10 @@ def graphevents(graph, month, maindays, plotcolor="red"):
 k = gevents("December", days)
 x, y = zip(*k)
 print(y)
+
 #faster compile time
 fig, (ax) = plt.subplots(1,1)
 ax.scatter(x,y)
-
 
 # graphevents(ax2, "March", days, "blue")
 
