@@ -11,13 +11,12 @@ import string
 from WordScrape import getword
 
 
-
-month = ""
-str(month)
-day = ""
-str(day)
-month = "december" #Wrap GUI Control
-day = "12"
+# month = ""
+# str(month)
+# day = ""
+# str(day)
+# month = "december" #Wrap GUI Control or CLI
+# day = "12"
 
 # months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
 # l = range(12+1)
@@ -29,7 +28,7 @@ day = "12"
 # 	ki = ki + 1
 # 	monthconversion[i] = (ki) 
 
-	
+
 def makedocument(month, day):
 	url = "https://www.timeanddate.com/on-this-day" + "/" + month + "/" + day
 	monthconversion = {'january': 1, 'february': 2, 'march': 3, 'april': 4, 'may': 5, 'june': 6, 'july': 7, 'august': 8, 'september': 9, 'october': 10, 'november': 11, 'december': 12}
@@ -58,7 +57,6 @@ def makedocument(month, day):
 		return rcb[0]+"-"+i
 	#------------------------------------------------------#
 	#
-	print(x)
 	#8:14 - YESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
 	                                     
 
